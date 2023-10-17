@@ -11,3 +11,7 @@ Further details of each project can be found in the project README's:
 [Factorial App]('./BackendCodingChallenge.Factorial.App/README.md')
 
 [Factorial Tests]('./BackendCodingChallenge.Factorial.Tests/README.md')
+
+## Additional Considerations
+
+* Could any logic be shared between solutions?
