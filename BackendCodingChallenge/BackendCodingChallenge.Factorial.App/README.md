@@ -6,4 +6,6 @@ Write a program that allows a user to enter a number, and then calculate the fac
 
 ## Usage
 
-## Implementation
+The program can be ran directly from Visual Studio by running or debugging the **BackendCodingChallenge.Factorial.App** project.
+
+It can also be executed from a terminal by navigating to BackendCodingChallenge\BackendCodingChallenge.Factorial.App and running `dotnet run`.
