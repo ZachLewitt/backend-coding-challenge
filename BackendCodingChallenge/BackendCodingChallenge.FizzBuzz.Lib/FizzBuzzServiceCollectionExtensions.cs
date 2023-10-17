@@ -14,9 +14,10 @@ public static class FizzBuzzServiceCollectionExtensions
 
     public static void AddFizzBuzzServices(this IServiceCollection services)
     {
+        services.AddSharedUtilities();
+
         services.AddSingleton<FizzBuzzApp>();
         services.AddTransient<FizzBuzzEngine>();
-        services.AddTransient<IOutputWriter, ConsoleOutputWriter>();
 
         services.AddTransient<IFizzBuzzRule>(_ => new MultipleMatchRule(1, new[] { 3, 5 }, FizzBuzz));
         services.AddTransient<IFizzBuzzRule>(_ => new SingleMatchRule(2, 3, Fizz));

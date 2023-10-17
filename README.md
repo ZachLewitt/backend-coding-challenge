@@ -18,3 +18,4 @@ Further details of each project can be found in the project README's:
 - Introduce logging framework
 - Potentially make the IFizzBuzzRules more concrete by making them more specific to the conditions and less configurable to reduce unnecessary complexity
 - `FizzBuzzApp` is not currently being unit tested. This could be remedied by adding an interface to `FizzBuzzEngine` and mocking it in a unit test to ensure the correct values are passed to the engine.
+- Fake the logic in the tests closer to the `Console` type. Currently, this is done by introducing fakes for `IInputReader` and `IOutputWriter` but a thin pass through client that directly reflects the `Console` type would give better test coverage.

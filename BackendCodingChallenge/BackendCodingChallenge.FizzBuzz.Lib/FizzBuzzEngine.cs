@@ -1,4 +1,5 @@
 ﻿using BackendCodingChallenge.FizzBuzz.Lib.Rules;
+using BackendCodingChallenge.Utilities;
 
 namespace BackendCodingChallenge.FizzBuzz.Lib;
 

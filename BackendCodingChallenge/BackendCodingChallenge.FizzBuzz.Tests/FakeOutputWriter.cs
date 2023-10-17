@@ -1,4 +1,4 @@
-﻿using BackendCodingChallenge.FizzBuzz.Lib;
+﻿using BackendCodingChallenge.Utilities;
 
 namespace BackendCodingChallenge.FizzBuzz.Tests;
 

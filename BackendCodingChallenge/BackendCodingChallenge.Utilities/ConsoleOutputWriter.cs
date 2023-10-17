@@ -1,4 +1,4 @@
-﻿namespace BackendCodingChallenge.FizzBuzz.Lib;
+﻿namespace BackendCodingChallenge.Utilities;
 
 public class ConsoleOutputWriter : IOutputWriter
 {

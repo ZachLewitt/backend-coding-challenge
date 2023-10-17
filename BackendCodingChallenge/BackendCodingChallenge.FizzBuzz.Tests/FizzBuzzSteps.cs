@@ -1,4 +1,5 @@
 ﻿using BackendCodingChallenge.FizzBuzz.Lib;
+using BackendCodingChallenge.Utilities;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using NUnit.Framework;
