@@ -28,7 +28,7 @@ Info on how to run can be found here - [FizzBuzz Tests](BackendCodingChallenge/B
 
 This is the entry point for the Factorial console application. This is a thin console application that hosts the components in the Factorial.Lib.
 
-[Factorial App](BackendCodingChallenge/BackendCodingChallenge.Factorial.App/README.md)
+Info on how to run can be found here - [Factorial App](BackendCodingChallenge/BackendCodingChallenge.Factorial.App/README.md)
 
 ### Factorial.Lib
 
