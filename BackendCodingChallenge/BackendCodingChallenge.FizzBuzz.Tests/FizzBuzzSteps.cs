@@ -1,4 +1,7 @@
-﻿using NUnit.Framework;
+﻿using BackendCodingChallenge.FizzBuzz.Lib;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using NUnit.Framework;
 using TechTalk.SpecFlow;
 
 namespace BackendCodingChallenge.FizzBuzz.Tests;
@@ -22,7 +25,19 @@ public class FizzBuzzSteps
     [When("the number is processed")]
     public void WhenTheNumberIsProcessed()
     {
-        // Execute application
+        var builder = Host.CreateApplicationBuilder();
+
+        builder.Services.AddFizzBuzzServices();
+
+        builder.Services.AddSingleton(_context);
+        builder.Services.AddTransient<IOutputWriter, FakeOutputWriter>();
+
+        using var host = builder.Build();
+        using var scope = host.Services.CreateScope();
+
+        var engine = scope.ServiceProvider.GetRequiredService<FizzBuzzEngine>();
+
+        engine.Process(_context.InputNumber);
     }
 
     [Then("the result should be (.*)")]
