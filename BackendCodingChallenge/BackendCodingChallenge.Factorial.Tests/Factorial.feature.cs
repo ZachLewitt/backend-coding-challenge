@@ -86,9 +86,7 @@ namespace BackendCodingChallenge.Factorial.Tests
         [NUnit.Framework.TestCaseAttribute("7", "5040", null)]
         [NUnit.Framework.TestCaseAttribute("8", "40320", null)]
         [NUnit.Framework.TestCaseAttribute("9", "362880", null)]
-        [NUnit.Framework.TestCaseAttribute("10", "1", null)]
-        [NUnit.Framework.TestCaseAttribute("999", "1", null)]
-        [NUnit.Framework.TestCaseAttribute("999999", "1", null)]
+        [NUnit.Framework.TestCaseAttribute("10", "3628800", null)]
         public void TheFactorialIsCalculatedWhenTheUserEntersAValidNumber(string number, string result, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
@@ -110,7 +108,7 @@ this.ScenarioInitialize(scenarioInfo);
     testRunner.Given(string.Format("the user has entered {0}", number), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 8
-    testRunner.When("the factorial is calculated", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+    testRunner.When("the user submits the value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 9
     testRunner.Then(string.Format("the result should be {0}", result), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -120,18 +118,13 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("The user is shown an error when they enter an invalid value")]
-        [NUnit.Framework.TestCaseAttribute("-1", null)]
-        [NUnit.Framework.TestCaseAttribute("", null)]
-        [NUnit.Framework.TestCaseAttribute("null", null)]
-        [NUnit.Framework.TestCaseAttribute("one", null)]
-        public void TheUserIsShownAnErrorWhenTheyEnterAnInvalidValue(string number, string[] exampleTags)
+        [NUnit.Framework.DescriptionAttribute("Large factorials can be calculated")]
+        public void LargeFactorialsCanBeCalculated()
         {
-            string[] tagsOfScenario = exampleTags;
+            string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("Number", number);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("The user is shown an error when they enter an invalid value", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 26
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Large factorials can be calculated", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 24
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -141,14 +134,117 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
+#line 25
+    testRunner.Given("the user has entered 99", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 26
+    testRunner.When("the user submits the value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
 #line 27
-    testRunner.Given(string.Format("the user has entered {0}", number), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+    testRunner.Then("the result should be 933262154439441526816992388562667004907159682643816214685929" +
+                        "63895217599993229915608941463976156518286253697920827223758251185210916864000000" +
+                        "0000000000000000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 28
-    testRunner.When("the factorial is calculated", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("The user is shown an error message when they enter an invalid value")]
+        [NUnit.Framework.TestCaseAttribute("-1", "The supplied value is less than zero. The value must be a positive integer.", null)]
+        [NUnit.Framework.TestCaseAttribute("", "No value has been provided. The value must be a positive integer.", null)]
+        [NUnit.Framework.TestCaseAttribute("null", "The supplied value is not a valid integer. The value must be a positive integer.", null)]
+        [NUnit.Framework.TestCaseAttribute("one", "The supplied value is not a valid integer. The value must be a positive integer.", null)]
+        public void TheUserIsShownAnErrorMessageWhenTheyEnterAnInvalidValue(string invalidValue, string errorMessage, string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("InvalidValue", invalidValue);
+            argumentsOfScenario.Add("ErrorMessage", errorMessage);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("The user is shown an error message when they enter an invalid value", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 29
-    testRunner.Then("the user should be shown an error", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 30
+    testRunner.Given(string.Format("the user has entered {0}", invalidValue), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 31
+    testRunner.When("the user submits the value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 32
+    testRunner.Then(string.Format("the user should be shown the error \'{0}\'", errorMessage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("The user is shown an error message when there is an error occurs reading the valu" +
+            "e")]
+        public void TheUserIsShownAnErrorMessageWhenThereIsAnErrorOccursReadingTheValue()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("The user is shown an error message when there is an error occurs reading the valu" +
+                    "e", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 40
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 41
+    testRunner.Given("an error will occur when the user tries to submit the value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 42
+    testRunner.When("the user submits the value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 43
+    testRunner.Then("the user should be shown the error \'An error occurred reading the users input\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("The user is shown an error when they quit the application without submitting a va" +
+            "lue")]
+        public void TheUserIsShownAnErrorWhenTheyQuitTheApplicationWithoutSubmittingAValue()
+        {
+            string[] tagsOfScenario = ((string[])(null));
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("The user is shown an error when they quit the application without submitting a va" +
+                    "lue", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 45
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 46
+    testRunner.Given("the user does not enter a value", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 47
+    testRunner.When("the user quits the application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 48
+    testRunner.Then("the user should be shown the error \'No value has been provided. The value must be" +
+                        " a positive integer.\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

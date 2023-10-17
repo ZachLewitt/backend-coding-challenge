@@ -9,9 +9,12 @@ Scenario Outline: The correct response is output based on the number
     Then the result should be <Result>
 Examples:
     | Number | Result   |
-    | 0      | 0        |
+    | 0      | FizzBuzz |
     | 1      | 1        |
     | 2      | 2        |
     | 3      | Fizz     |
     | 5      | Buzz     |
     | 15     | FizzBuzz |
+    | -9     | Fizz     |
+    | -100   | Buzz     |
+    | -300   | FizzBuzz |

@@ -77,12 +77,15 @@ namespace BackendCodingChallenge.FizzBuzz.Tests
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("The correct response is output based on the number")]
-        [NUnit.Framework.TestCaseAttribute("0", "0", null)]
+        [NUnit.Framework.TestCaseAttribute("0", "FizzBuzz", null)]
         [NUnit.Framework.TestCaseAttribute("1", "1", null)]
         [NUnit.Framework.TestCaseAttribute("2", "2", null)]
         [NUnit.Framework.TestCaseAttribute("3", "Fizz", null)]
         [NUnit.Framework.TestCaseAttribute("5", "Buzz", null)]
         [NUnit.Framework.TestCaseAttribute("15", "FizzBuzz", null)]
+        [NUnit.Framework.TestCaseAttribute("-9", "Fizz", null)]
+        [NUnit.Framework.TestCaseAttribute("-100", "Buzz", null)]
+        [NUnit.Framework.TestCaseAttribute("-300", "FizzBuzz", null)]
         public void TheCorrectResponseIsOutputBasedOnTheNumber(string number, string result, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;

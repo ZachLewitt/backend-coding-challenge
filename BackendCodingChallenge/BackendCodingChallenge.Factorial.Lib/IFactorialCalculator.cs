@@ -1,6 +1,8 @@
-﻿namespace BackendCodingChallenge.Factorial.Lib;
+﻿using System.Numerics;
+
+namespace BackendCodingChallenge.Factorial.Lib;
 
 public interface IFactorialCalculator
 {
-    int Calculate(int number);
+    BigInteger Calculate(int number);
 }
