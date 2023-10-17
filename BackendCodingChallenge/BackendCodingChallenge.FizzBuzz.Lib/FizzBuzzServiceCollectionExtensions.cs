@@ -12,6 +12,10 @@ public static class FizzBuzzServiceCollectionExtensions
 
     private const string Buzz = "Buzz";
 
+    /// <summary>
+    /// Adds the services that are needed to run the FizzBuzz application.
+    /// </summary>
+    /// <param name="services"></param>
     public static void AddFizzBuzzServices(this IServiceCollection services)
     {
         services.AddSharedUtilities();
@@ -19,6 +23,7 @@ public static class FizzBuzzServiceCollectionExtensions
         services.AddSingleton<FizzBuzzApp>();
         services.AddTransient<FizzBuzzEngine>();
 
+        // Register the FizzBuzz rules assigning the correct priorities. The CatchAllRule must have the lowest priority.
         services.AddTransient<IFizzBuzzRule>(_ => new MultipleMatchRule(1, new[] { 3, 5 }, FizzBuzz));
         services.AddTransient<IFizzBuzzRule>(_ => new SingleMatchRule(2, 3, Fizz));
         services.AddTransient<IFizzBuzzRule>(_ => new SingleMatchRule(3, 5, Buzz));

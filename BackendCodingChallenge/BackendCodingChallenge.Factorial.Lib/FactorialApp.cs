@@ -2,6 +2,10 @@
 
 namespace BackendCodingChallenge.Factorial.Lib;
 
+/// <summary>
+/// The FactorialApp requests a number from the user and then generates the factorial for it. The factorial is then displayed
+/// to the user.
+/// </summary>
 public class FactorialApp
 {
     private readonly IFactorialInputParser _inputParser;

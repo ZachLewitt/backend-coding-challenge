@@ -1,5 +1,9 @@
 ﻿namespace BackendCodingChallenge.FizzBuzz.Lib;
 
+/// <summary>
+/// The FizzBuzzApp uses the <see cref="FizzBuzzEngine"/> to process the numbers 1 to 100 and generate the
+/// expected FizzBuzz output.
+/// </summary>
 public class FizzBuzzApp
 {
     private readonly FizzBuzzEngine _engine;

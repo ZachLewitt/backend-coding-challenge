@@ -2,6 +2,10 @@
 
 namespace BackendCodingChallenge.Factorial.Tests;
 
+/// <summary>
+/// Fake input reader that uses the <see cref="FactorialContext"/> to return fake input to the application
+/// as part of the tests.
+/// </summary>
 public class FakeInputReader : IInputReader
 {
     private readonly FactorialContext _context;

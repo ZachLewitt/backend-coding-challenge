@@ -2,6 +2,7 @@
 
 namespace BackendCodingChallenge.Factorial.Lib;
 
+/// <inheritdoc cref="IFactorialInputParser"/>
 public class FactorialInputParser : IFactorialInputParser
 {
     public Result<int> Parse(string? rawValue)

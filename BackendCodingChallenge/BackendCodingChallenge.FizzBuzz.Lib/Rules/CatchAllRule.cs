@@ -1,5 +1,11 @@
-﻿namespace BackendCodingChallenge.FizzBuzz.Lib.Rules;
+﻿using BackendCodingChallenge.Utilities;
 
+namespace BackendCodingChallenge.FizzBuzz.Lib.Rules;
+
+/// <summary>
+/// FizzBuzz rule used as a catch all for if more specific rules do not match. This rule will
+/// always match and will return the value as a string.
+/// </summary>
 public class CatchAllRule : IFizzBuzzRule
 {
     public int Priority { get; }
@@ -9,9 +15,9 @@ public class CatchAllRule : IFizzBuzzRule
         Priority = priority;
     }
 
-    public string Run(int value)
+    public Result<string> Run(int value)
     {
-        return value.ToString();
+        return Result<string>.Ok(value.ToString());
     }
 }
 

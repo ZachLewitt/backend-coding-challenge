@@ -2,6 +2,9 @@
 
 namespace BackendCodingChallenge.Factorial.Tests;
 
+/// <summary>
+/// Test context used to store the test state for the Factorial tests.
+/// </summary>
 [Binding]
 public class FactorialContext
 {
