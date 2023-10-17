@@ -10,37 +10,37 @@ The solution is comprised of the following projects:
 
 This is the entry point for the FizzBuzz console application. This is a thin console application that hosts the components in the FizzBuzz.Lib.
 
-Info on how to run can be found here - [FizzBuzz App](BackEndCodingChallenge/BackendCodingChallenge.FizzBuzz.App/README.md)
+Info on how to run can be found here - [FizzBuzz App](BackendCodingChallenge/BackendCodingChallenge.FizzBuzz.App/README.md)
 
 ### FizzBuzz.Lib
 
 The service layer logic for the FizzBuzz application. This contains the bulk of the logic for the application. The components in this library are covered by the tests in FizzBuzz.Tests.
 
-[FizzBuzz Lib](BackEndCodingChallenge/BackendCodingChallenge.FizzBuzz.Lib/README.md)
+[FizzBuzz Lib](BackendCodingChallenge/BackendCodingChallenge.FizzBuzz.Lib/README.md)
 
 ### FizzBuzz.Tests
 
 This is a SpecFlow test project that contains BDD spec tests for the components in the FizzBuzz.Lib.
 
-Info on how to run can be found here - [FizzBuzz Tests](BackEndCodingChallenge/BackendCodingChallenge.FizzBuzz.Tests/README.md)
+Info on how to run can be found here - [FizzBuzz Tests](BackendCodingChallenge/BackendCodingChallenge.FizzBuzz.Tests/README.md)
 
 ### Factorial.App
 
 This is the entry point for the Factorial console application. This is a thin console application that hosts the components in the Factorial.Lib.
 
-[Factorial App](BackEndCodingChallenge/BackendCodingChallenge.Factorial.App/README.md)
+[Factorial App](BackendCodingChallenge/BackendCodingChallenge.Factorial.App/README.md)
 
 ### Factorial.Lib
 
 The service layer logic for the Factorial application. This contains the bulk of the logic for the application. The components in this library are covered by the tests in Factorial.Tests.
 
-[Factorial Lib](BackEndCodingChallenge/BackendCodingChallenge.Factorial.Lib/README.md)
+[Factorial Lib](BackendCodingChallenge/BackendCodingChallenge.Factorial.Lib/README.md)
 
 ### Factorial.Tests
 
 This is a SpecFlow test project that contains BDD spec tests for the components in the Factorial.Lib.
 
-Info on how to run can be found here - [Factorial Tests](BackEndCodingChallenge/BackendCodingChallenge.Factorial.Tests/README.md)
+Info on how to run can be found here - [Factorial Tests](BackendCodingChallenge/BackendCodingChallenge.Factorial.Tests/README.md)
 
 ### Utilities
 
