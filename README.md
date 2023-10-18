@@ -1,6 +1,8 @@
 # Backend Coding Challenge
 
-This repository contains solutions to two coding challenges. The solutions have been developed as .NET 7 console applications. Both solutions have supporting test projects which have been developed using SpecFlow.
+This repository contains solutions to two coding challenges. The solutions have been developed as .NET 7 console applications. 
+
+Both solutions have supporting test projects which have been developed using SpecFlow. SpecFlow has been used over more traditional unit tests as the features files provide a better insight into the functionality provided by the applications. The spec tests also work more like integration tests, testing the components of the application together which gives greater coverage with fewer tests. As the tests only exercise the interface of the application they aren't as brittle and are less likely to need refactoring if the internal implementation of the application is refactored.
 
 ## Project Structure
 

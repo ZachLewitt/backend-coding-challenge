@@ -30,6 +30,8 @@ public class FizzBuzzSteps
 
         builder.Services.AddFizzBuzzServices();
 
+        // Add the context and register the fakes. The fakes will override the other implementations in
+        // the ServiceCollection.
         builder.Services.AddSingleton(_context);
         builder.Services.AddTransient<IOutputWriter, FakeOutputWriter>();
 

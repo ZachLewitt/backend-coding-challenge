@@ -1,7 +1,14 @@
 ﻿namespace BackendCodingChallenge.Utilities;
 
+/// <summary>
+/// Type used to read user input from the console.
+/// </summary>
 public class ConsoleInputReader : IInputReader
 {
+    /// <summary>
+    /// Reads a line of text from the console.
+    /// </summary>
+    /// <returns>A result containing either the text or a problem message if an error occurred</returns>
     public Result<string?> Read()
     {
         Result<string?> result;
