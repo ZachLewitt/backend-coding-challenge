@@ -24,6 +24,7 @@ public class FizzBuzzEngine
     {
         Result<string>? result = null;
 
+        // Loop over all the rules in order until we reach the first one that matches and returns a successful result.
         foreach (var rule in _rules)
         {
             result = rule.Run(value);
