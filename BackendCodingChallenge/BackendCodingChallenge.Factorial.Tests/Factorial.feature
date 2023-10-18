@@ -37,7 +37,7 @@ Examples:
     | null         | The supplied value is not a valid integer. The value must be a positive integer. |
     | one          | The supplied value is not a valid integer. The value must be a positive integer. |
 
-Scenario: The user is shown an error message when there is an error occurs reading the value
+Scenario: The user is shown an error message when an error occurs reading the value
     Given an error will occur when the user tries to submit the value
     When the user submits the value
     Then the user should be shown the error 'An error occurred reading the users input'
